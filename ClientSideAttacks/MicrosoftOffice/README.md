@@ -2,15 +2,15 @@
 
 #### Attack Presentation.
 
-The client-side attacks based on Microsoft Office is one type of attacke that involves the macros Microsoft Office tools feature to in a procedure that leads to RCE on victim's host. The language the macros of Microsoft Office are based of is VBA.
+The client-side attacks based on Microsoft Office's programs is a type of attack that involves the macros feature of Microsoft Office tools in a procedure that leads to RCE on victim's host. This macros are based in VBA.
 
-In this repository we can find some scripts and procedures to craft and test macros that run arbitrary code when gets open.
+In this repository we can find some scripts and procedures to craft and test macros that run arbitrary code when this gets open.
 
 <br>
 
 #### How to make a Macro.
 
-The macro is a document which consist in a script built in VBA that get stored along with a Microsoft Office's document and get executed in certains conditions when some user interacts with this document.
+The macro is a document which consist in a script built in VBA that get stored along with a Microsoft Office's document and get executed in certains conditions when some user interacts with it.
 
 In order to create a macro from a VBA script we follow the nexts steps:
 
