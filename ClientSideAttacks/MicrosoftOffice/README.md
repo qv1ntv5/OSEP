@@ -10,7 +10,7 @@ In this repository we can find some scripts and procedures to craft and test mac
 
 #### How to make a Macro.
 
-The macro is a document which consist in a script built in VBA that get stored along with the document and get executed in certains conditions when some user interacts with it.
+The macro is a document which consist in a script built in VBA that get stored along with a Microsoft Office's document and get executed in certains conditions when some user interacts with this document.
 
 In order to create a macro from a VBA script we follow the nexts steps:
 
