@@ -21,3 +21,4 @@ In order to create a macro from a VBA script we follow the nexts steps:
 - Test it pressing [F5] or Run botton.
 - If is all correct, save the document.
 
+For simplicity, the scripts stored in this repository have the extension .vba. This is formally incorrect since the vba scripts are recorded as macros and stored along the document which have his own extension (.doc, .xslx, etc).
