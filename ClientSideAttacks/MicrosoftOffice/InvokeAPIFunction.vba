@@ -1,0 +1,2 @@
+' In order to be able to invoke a function that belongs to a Win32 APIs, first, we need to read the documentation in order to see the description of the function.
+' Then, when we have clear how the function works, we have to describe an alias that reproduce the description of this C function in terms of VBA language.
