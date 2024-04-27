@@ -4,4 +4,16 @@ The client-side attacks based on Microsoft Office's programs is a type of attack
 
 In this repository we can find some scripts and procedures to craft and test macros that run arbitrary code when this gets open.
 
+On the other hand in summary, if we want to create a backdoor connection we must go step by step:
+
+- First we craft our shellcode with the help of [ShellCode.sh](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/Payloads/MsfVenom/ShellCode.sh) file. 
+
+- Once we craft it, we paste it in the '$buf' variable of [VBAenvlauncher.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/VBAenvlauncher.ps1) script.
+
+- Then, we make use of [PSHTTPDownloader.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/PSHTTPDownloader.vba) to donwload and execute the prepared VBAenvlauncher.ps1 script.
+
+It is worth to note that in PSHTTPDownloader we must add to the downloader line sotred in *str* var the text '| IEX' in order to make powershell to also execute the contents of the script he previously has downloaded.
+
+The rest of scripts present on this repository are only for help the reader to understand the main scripts necesary to perform the operation.
+
 <br>
