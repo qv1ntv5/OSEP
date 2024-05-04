@@ -47,4 +47,4 @@ $hThread = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPoint
 
 # IN SUMMARY; this code invokes and executes Win32 APIs in order to form a shellcode runner that is practically indetectable by AVs. Only requires to substitute the <SHELLCODE> to work.
 
-# IMPORTANT; Is worth to note that this script is write to crate a thread in an existing process. So it will not work if it gets execute in a CMD, it will only work if a program launch this process (like a macro of a Word Document).
+# IMPORTANT; Is worth to note that this script is write to crate a thread in an existing process. So it will not work if it gets executed in a CMD, it will only work if a program launch this script (like a macro of a Word Document). More information on README.mdon Microsoft Office folder.
