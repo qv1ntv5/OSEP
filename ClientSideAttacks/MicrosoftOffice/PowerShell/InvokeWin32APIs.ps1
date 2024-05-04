@@ -9,11 +9,11 @@ public class User32 {
 }
 "@
 
-# We add a block of text to a variable.
+# We add a C# class to a variable.
 
 Add-Type $User32
 
-# We implement this variable to our powershell session using 'Add-Type' directive.
+# We implement this variable to our powershell session using 'Add-Type' directive. This directive adds a Microsoft .NET class to a PowerShell session
 $size = 256
 [User32]::GetUserName($str, [ref]$size)
 

