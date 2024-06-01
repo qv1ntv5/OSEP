@@ -1,7 +1,7 @@
 Uno de los métodos de detección de los AV se basan en las firmas de los ficheros; AV Signature Detection.
 Este método de detección se basa en que existe un 'byte string' asociado a actividad maliciosa y si es detectado dentro de un fichero este es detectado como malicioso.
 
-Una de las solucciónes que se aporta en este repositorio, consiste en:
+Una de las solucciónes que se aporta en este repositorio, consiste en localizar y cambiar ese bytestring con la finalidad de evitar la detección por parte del engine del antivirus:
 
 - Intentar hacernos con una versión del antivirus que corre en la máquina objetivo.
 
