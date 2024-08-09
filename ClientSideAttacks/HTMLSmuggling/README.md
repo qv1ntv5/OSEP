@@ -20,7 +20,7 @@ The use of this files is as follows:
     base64 /var/www/html/msfstaged.exe
     ```
 
-- Copy the Base64 payload onto the HTML file (-Chrome if the client is using Google Chrome or -Edge if the client is using Microsoft Edge).
+- Copy the Base64 payload onto the HTML file ([Chrome](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/HTMLSmuggling/HTMLSmuggling-Chrome.html) if the client is using Google Chrome or [Edge](https://github.com/qv1ntv5/OSEP/blob/main/ClientSideAttacks/HTMLSmuggling/HTMLSmuggling-Edge.html) if the client is using Microsoft Edge).
 
 - Place the HTML file in the root directory of the HTTP server (var/www/html)
 
